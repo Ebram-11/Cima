@@ -44,25 +44,50 @@ function getMovieById(req, res) {
     return res.status(404).json({ message: 'Movie not found' });
   }
 
-  // Dynamically assign random showtimes at 3 to 5 randomly picked cinemas
-  const numCinemas = Math.floor(Math.random() * 3) + 3; // 3, 4, or 5
-  const shuffledCinemas = [...CINEMAS].sort(() => 0.5 - Math.random());
-  const selectedCinemas = shuffledCinemas.slice(0, numCinemas);
+  // Statically assign 3 to 5 cinemas based on the movie's ID
+  const numCinemas = (movie.id % 3) + 3; // 3, 4, or 5
+  const startIdx = movie.id % CINEMAS.length;
+  
+  const selectedCinemas = [];
+  for (let i = 0; i < numCinemas; i++) {
+    selectedCinemas.push(CINEMAS[(startIdx + i) % CINEMAS.length]);
+  }
 
-  const showtimes = selectedCinemas.map(cinema => {
-    // Generate 3 random ordered showtimes
-    const times = ['13:00', '15:30', '18:00', '20:30', '23:00']
-      .sort(() => 0.5 - Math.random())
-      .slice(0, 3)
-      .sort();
+  // Get current time in HH:MM format
+  const now = new Date();
+  const currentHours = String(now.getHours()).padStart(2, '0');
+  const currentMinutes = String(now.getMinutes()).padStart(2, '0');
+  const currentTimeStr = `${currentHours}:${currentMinutes}`;
 
-    return {
-      cinemaId: cinema.id,
-      name: cinema.name,
-      location: cinema.location,
-      times
-    };
-  });
+  const allTimes = ['13:00', '15:30', '18:00', '20:30', '23:00'];
+  // SCRUM-43: exclude past showtimes
+  const futureTimes = allTimes.filter(t => t > currentTimeStr);
+
+  const showtimes = [];
+
+  if (futureTimes.length > 0) {
+    selectedCinemas.forEach(cinema => {
+      // Pick times deterministically based on movie and cinema IDs
+      const timeOffset = (movie.id + cinema.id) % futureTimes.length;
+      const count = ( (movie.id + cinema.id) % 2 ) + 2; // pick 2 or 3
+      
+      const times = [];
+      for(let i=0; i<count; i++) {
+         const tm = futureTimes[(timeOffset + i) % futureTimes.length];
+         if(!times.includes(tm)) times.push(tm);
+      }
+      times.sort();
+
+      if (times.length > 0) {
+        showtimes.push({
+          cinemaId: cinema.id,
+          name: cinema.name,
+          location: cinema.location,
+          times
+        });
+      }
+    });
+  }
 
   res.json({ movie: { ...movie, showtimes } });
 }

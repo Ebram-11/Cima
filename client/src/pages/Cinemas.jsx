@@ -1,5 +1,6 @@
 // SCRUM-41: Filter Cinemas by Location
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import './cinemas.css';
 
@@ -8,6 +9,7 @@ import './cinemas.css';
 const LOCATION_KEY = 'cima_cinema_location_filter';
 
 function Cinemas() {
+  const navigate = useNavigate();
   const [locations, setLocations] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState(() => {
     // Restore from sessionStorage on mount
@@ -122,9 +124,10 @@ function Cinemas() {
               <div
                 key={cinema.id}
                 className="cinema-card slide-up"
-                style={{ animationDelay: `${Math.min(index * 50, 400)}ms` }}
+                style={{ animationDelay: `${Math.min(index * 40, 400)}ms`, cursor: 'pointer' }}
+                onClick={() => navigate(`/cinemas/${cinema.id}`)}
               >
-                <div className="cinema-image">
+                <div className="cinema-image-wrapper">
                   <img src={cinema.image} alt={cinema.name} loading="lazy" />
                   {cinema.imax && <span className="cinema-badge">IMAX</span>}
                 </div>

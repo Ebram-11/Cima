@@ -9,6 +9,7 @@ function MovieDetails() {
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState('');
 
   useEffect(() => {
     let cancelled = false;
@@ -91,26 +92,59 @@ function MovieDetails() {
         <h2>🎟️ Available Showtimes</h2>
         <p className="md-subtitle">Select a time to book your tickets</p>
         
+        {movie.showtimes && movie.showtimes.length > 0 && (
+          <div className="md-location-filter">
+            <label htmlFor="loc-filter">Filter by Location: </label>
+            <select 
+              id="loc-filter"
+              value={selectedLocation} 
+              onChange={(e) => setSelectedLocation(e.target.value)}
+              className="md-location-select"
+            >
+              <option value="">All Locations</option>
+              {Array.from(new Set(movie.showtimes.map(c => c.location))).sort().map(loc => (
+                <option key={loc} value={loc}>{loc}</option>
+              ))}
+            </select>
+          </div>
+        )}
+
         <div className="cinemas-list">
           {movie.showtimes && movie.showtimes.length > 0 ? (
-            movie.showtimes.map((cinema, idx) => (
-              <div key={idx} className="md-cinema-card slide-up" style={{ animationDelay: `${idx * 60}ms` }}>
-                <div className="md-cinema-info">
-                  <h3>{cinema.name}</h3>
-                  <p>📍 {cinema.location}</p>
+            movie.showtimes
+              .filter(c => selectedLocation ? c.location === selectedLocation : true)
+              .length > 0 ? (
+                movie.showtimes
+                  .filter(c => selectedLocation ? c.location === selectedLocation : true)
+                  .map((cinema, idx) => (
+                    <div key={idx} className="md-cinema-card slide-up" style={{ animationDelay: `${idx * 60}ms` }}>
+                      <div className="md-cinema-info">
+                        <h3 
+                          onClick={() => navigate(`/cinemas/${cinema.cinemaId}`)}
+                          className="md-cinema-link"
+                          title={`View movies playing at ${cinema.name}`}
+                        >
+                          {cinema.name}
+                        </h3>
+                        <p>📍 {cinema.location}</p>
+                      </div>
+                      <div className="md-times-grid">
+                        {cinema.times.map((time, tIdx) => (
+                          <button key={tIdx} className="md-time-slot">
+                            {time}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))
+              ) : (
+                <div className="empty-state">
+                  <p>No cinemas found in this location.</p>
                 </div>
-                <div className="md-times-grid">
-                  {cinema.times.map((time, tIdx) => (
-                    <button key={tIdx} className="md-time-slot">
-                      {time}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ))
+              )
           ) : (
             <div className="empty-state">
-              <p>No showtimes available for this movie right now.</p>
+              <p>No showtimes available</p>
             </div>
           )}
         </div>
