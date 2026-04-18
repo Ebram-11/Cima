@@ -1,9 +1,11 @@
 // SCRUM-42: Filter Movies by Genre
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import './Movies.css';
+import './movies.css';
 
 function Movies() {
+  const navigate = useNavigate();
   const [genres, setGenres] = useState([]);         // all genres available
   const [selected, setSelected] = useState([]);     // user-selected genres
   const [movies, setMovies] = useState([]);
@@ -117,7 +119,8 @@ function Movies() {
               <div
                 key={movie.id}
                 className="movie-card slide-up"
-                style={{ animationDelay: `${Math.min(index * 40, 400)}ms` }}
+                style={{ animationDelay: `${Math.min(index * 40, 400)}ms`, cursor: 'pointer' }}
+                onClick={() => navigate(`/movies/${movie.id}`)}
               >
                 <div className="movie-poster">
                   <img src={movie.poster} alt={movie.title} loading="lazy" />

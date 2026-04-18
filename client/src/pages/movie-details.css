@@ -1,0 +1,238 @@
+.movie-details-page {
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.movie-details-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+/* Hero Section */
+.md-hero {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  margin-top: -32px; /* Pull up into the header padding area */
+  border-radius: 0 0 24px 24px;
+  overflow: hidden;
+}
+
+.md-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  filter: blur(2px);
+  transform: scale(1.05); /* hide blurred edges */
+}
+
+.md-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(14, 16, 20, 0.2) 0%,
+    rgba(14, 16, 20, 0.8) 60%,
+    var(--bg-main) 100%
+  );
+  z-index: 1;
+}
+
+.md-hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 40px;
+  align-items: flex-end;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.md-poster-wrapper {
+  flex-shrink: 0;
+  width: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.md-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.md-info {
+  flex-grow: 1;
+  padding-bottom: 10px;
+}
+
+.md-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.md-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.md-badge {
+  background: rgba(255,255,255,0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.md-rating {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.md-genres {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.md-genre-chip {
+  background: rgba(232, 168, 56, 0.15); /* primary with low opacity */
+  color: var(--primary);
+  border: 1px solid rgba(232, 168, 56, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.md-synopsis {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0;
+}
+
+/* Showtimes */
+.md-showtimes-section {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.md-showtimes-section h2 {
+  font-size: 2rem;
+  margin: 0 0 8px 0;
+}
+
+.md-subtitle {
+  color: var(--text-secondary);
+  margin: 0 0 32px 0;
+  font-size: 1.1rem;
+}
+
+.cinemas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.md-cinema-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.md-cinema-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.md-cinema-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.3rem;
+}
+
+.md-cinema-info p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.md-times-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.md-time-slot {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.md-time-slot:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 168, 56, 0.3);
+}
+
+@media (max-width: 900px) {
+  .md-hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .md-meta, .md-genres {
+    justify-content: center;
+  }
+
+  .md-cinema-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .md-times-grid {
+    justify-content: flex-start;
+  }
+}

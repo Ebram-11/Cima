@@ -1,0 +1,23 @@
+# Cima Project Conventions
+
+## Naming Conventions
+- **Classes and React Components**: \`PascalCase\` (e.g., \`class UserProfile\`, \`function MovieDetails()\`)
+- **Variables and Functions**: \`camelCase\` (e.g., \`const userData\`, \`function fetchMovies()\`)
+- **File Names**: \`kebab-case\` for ALL files including components (e.g., \`user-auth-service.js\`, \`movie-details.jsx\`, \`auth-controller.js\`)
+
+## Git Branch & Commit Format
+When working on tasks, please ensure you use the following exact formats.
+
+### Branches
+Format: \`type/SCRUM-ID-short-description\`
+- **type**: \`feature\`, \`fix\`, \`hotfix\`, \`chore\`, or \`refactor\`
+- **SCRUM-ID**: The specific Jira/Scrum board ticket ID (e.g., \`SCRUM-42\`)
+- **short-description**: A deeply hyphenated brief explanation
+
+**Example**: \`feature/SCRUM-42-filter-movies-genre\`
+
+### Commits
+Format: \`[SCRUM-ID] Brief description of changes\`
+- Every commit message must begin with exactly the bracketed Scrum ID.
+
+**Example**: \`[SCRUM-42] add movie filtering by genre and fetch genres list natively\`

@@ -1,5 +1,6 @@
-import { useAuth } from '../context/AuthContext';
-import './Home.css';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/auth-context';
+import './home.css';
 
 // Mock movie data — will be replaced with API calls later
 const MOCK_MOVIES = [
@@ -71,6 +72,7 @@ const MOCK_MOVIES = [
 
 function Home() {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const featured = MOCK_MOVIES[0];
 
   return (
@@ -99,8 +101,8 @@ function Home() {
             <span>2h 35m</span>
           </div>
           <div className="hero-actions">
-            <button className="btn-primary">Book Now</button>
-            <button className="btn-secondary">More Info</button>
+            <button className="btn-primary" onClick={() => navigate('/movies/' + featured.id)}>Book Now</button>
+            <button className="btn-secondary" onClick={() => navigate('/movies/' + featured.id)}>More Info</button>
           </div>
         </div>
       </div>
@@ -116,7 +118,8 @@ function Home() {
             <div
               key={movie.id}
               className="movie-card slide-up"
-              style={{ animationDelay: `${index * 60}ms` }}
+              style={{ animationDelay: `${index * 60}ms`, cursor: 'pointer' }}
+              onClick={() => navigate(`/movies/${movie.id}`)}
             >
               <div className="movie-poster">
                 <img src={movie.poster} alt={movie.title} loading="lazy" />
@@ -140,7 +143,8 @@ function Home() {
             <div
               key={movie.id}
               className="movie-card slide-up"
-              style={{ animationDelay: `${index * 60}ms` }}
+              style={{ animationDelay: `${index * 60}ms`, cursor: 'pointer' }}
+              onClick={() => navigate(`/movies/${movie.id}`)}
             >
               <div className="movie-poster">
                 <img src={movie.poster} alt={movie.title} loading="lazy" />
