@@ -116,7 +116,11 @@ function CinemaDetails() {
                   <h4>Available Times</h4>
                   <div className="cd-times-grid">
                     {movie.times.map((time, tIdx) => (
-                      <button key={tIdx} className="cd-time-slot">
+                      <button 
+                        key={tIdx} 
+                        className="cd-time-slot"
+                        onClick={() => navigate('/checkout', { state: { movie, cinema, time } })}
+                      >
                         {time}
                       </button>
                     ))}

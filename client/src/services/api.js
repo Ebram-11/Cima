@@ -84,6 +84,17 @@ const api = {
     },
     getById(id) {
       return api.request(`/cinemas/${id}`);
+    },
+    addMovie(cinemaId, { movieId, times }) {
+      return api.request(`/cinemas/${cinemaId}/movies`, {
+        method: 'POST',
+        body: JSON.stringify({ movieId, times })
+      });
+    },
+    removeMovie(cinemaId, movieId) {
+      return api.request(`/cinemas/${cinemaId}/movies/${movieId}`, {
+        method: 'DELETE'
+      });
     }
   },
 

@@ -13,6 +13,7 @@ const authMiddleware = (req, res, next) => {
     const token = authHeader.split(' ')[1];
     const decoded = jwt.verify(token, JWT_SECRET);
 
+    // decoded should include id, email, userRole, and managedCinemaId
     req.user = decoded;
     next();
   } catch (error) {
@@ -20,4 +21,36 @@ const authMiddleware = (req, res, next) => {
   }
 };
 
-module.exports = { authMiddleware, JWT_SECRET };
+/**
+ * Middleware to restrict access based on userRole
+ * @param {string[]} roles - Allowed roles
+ */
+const checkRole = (roles) => {
+  return (req, res, next) => {
+    if (!req.user || !roles.includes(req.user.userRole)) {
+      return res.status(403).json({ message: 'Forbidden: Insufficient permissions.' });
+    }
+    next();
+  };
+};
+
+/**
+ * Middleware to ensure the user is the manager of the cinema they are trying to edit
+ */
+const canManageCinema = (req, res, next) => {
+  const { id: cinemaId } = req.params;
+  
+  // Super Admins can manage everything
+  if (req.user.userRole === 'ADMIN') {
+    return next();
+  }
+
+  // Managers can only manage their assigned cinema
+  if (req.user.userRole === 'STAFF' && req.user.managedCinemaId === cinemaId) {
+    return next();
+  }
+
+  return res.status(403).json({ message: 'Forbidden: You do not have management rights for this cinema.' });
+};
+
+module.exports = { authMiddleware, checkRole, canManageCinema, JWT_SECRET };

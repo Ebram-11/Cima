@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import api from '../services/api';
+import './checkout.css';
 
 function Checkout() {
   const { state } = useLocation();
@@ -24,7 +25,7 @@ function Checkout() {
       const bookingId = `BKG-${Math.floor(Math.random() * 10000)}`;
       const intentResponse = await api.payments.createIntent(150, bookingId); // EGP 150 mock price
       
-      // 2. Simulate 5-second processing NFR over HTTPS
+      // 2. Simulate processing time
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       // 3. Confirm the payment
@@ -43,58 +44,62 @@ function Checkout() {
   if (!state?.movie) return null;
 
   return (
-    <div style={{ maxWidth: '500px', margin: '40px auto', padding: '20px', backgroundColor: '#1a1a1a', borderRadius: '12px' }}>
-      <h2>Secure Checkout 🔒</h2>
-      <div style={{ padding: '15px', backgroundColor: '#2a2a2a', borderRadius: '8px', marginBottom: '20px' }}>
-        <h3>{state.movie.title}</h3>
-        <p>📍 {state.cinema.name} ({state.cinema.location})</p>
-        <p>⏰ {state.time} — 1 Ticket</p>
-        <h2 style={{ color: '#e8a838', marginTop: '10px' }}>Total: 150 EGP</h2>
+    <div className="checkout-page">
+      <div className="checkout-header">
+        <h2>Secure Checkout 🔒</h2>
+        <p className="checkout-security-note">
+           Your data is encrypted and processed via Stripe Secure Gateway.
+        </p>
       </div>
 
       {success ? (
-        <div style={{ padding: '20px', backgroundColor: '#2e7d32', color: 'white', borderRadius: '8px', textAlign: 'center' }}>
-          <h3>✅ Payment Successful!</h3>
-          <p>Your booking is confirmed. Redirecting...</p>
+        <div className="success-container">
+          <div className="success-icon">✅</div>
+          <h3 className="success-title">Payment Successful!</h3>
+          <p className="success-msg">Your booking is confirmed. We're redirecting you home...</p>
         </div>
       ) : (
-        <form onSubmit={handlePayment} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-          {error && (
-            <div style={{ padding: '15px', backgroundColor: '#d32f2f', color: 'white', borderRadius: '8px' }}>
-              ⚠️ {error}
+        <>
+          <div className="checkout-summary">
+            <h3>{state.movie.title}</h3>
+            <div className="summary-details">
+              <span>📍 {state.cinema.name} ({state.cinema.location})</span>
+              <span>⏰ {state.time} — 1 Standard Ticket</span>
             </div>
-          )}
-          
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-            <label>Card Number (Mocked for PCI-DSS)</label>
-            <input type="text" placeholder="1234 5678 9101 1121" maxLength="19" required 
-                   style={{ padding: '12px', borderRadius: '6px', border: '1px solid #444', backgroundColor: '#333', color: 'white' }} />
-          </div>
-
-          <div style={{ display: 'flex', gap: '15px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', flex: 1 }}>
-              <label>Expiry</label>
-              <input type="text" placeholder="MM/YY" maxLength="5" required 
-                     style={{ padding: '12px', borderRadius: '6px', border: '1px solid #444', backgroundColor: '#333', color: 'white' }} />
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', flex: 1 }}>
-              <label>CVC</label>
-              <input type="password" placeholder="123" maxLength="3" required 
-                     style={{ padding: '12px', borderRadius: '6px', border: '1px solid #444', backgroundColor: '#333', color: 'white' }} />
+            <div className="summary-total">
+              <span>Total to Pay:</span>
+              <span className="total-amount">150 EGP</span>
             </div>
           </div>
 
-          <p style={{ fontSize: '12px', color: '#888' }}>
-            🔒 All data is transmitted securely via HTTPS and processed off-server.
-          </p>
+          <form onSubmit={handlePayment} className="checkout-form">
+            {error && <div className="alert-error">⚠️ {error}</div>}
+            
+            <div className="form-group">
+              <label>Card Number</label>
+              <input type="text" placeholder="1234 5678 9101 1121" maxLength="19" required />
+            </div>
 
-          <button type="submit" disabled={loading} style={{ 
-            padding: '15px', backgroundColor: '#e8a838', color: 'black', border: 'none', 
-            borderRadius: '6px', fontWeight: 'bold', fontSize: '16px', cursor: loading ? 'wait' : 'pointer' 
-          }}>
-            {loading ? 'Processing...' : 'Pay 150 EGP securely'}
-          </button>
-        </form>
+            <div className="form-row">
+              <div className="form-group">
+                <label>Expiry Date</label>
+                <input type="text" placeholder="MM/YY" maxLength="5" required />
+              </div>
+              <div className="form-group">
+                <label>CVC</label>
+                <input type="password" placeholder="123" maxLength="3" required />
+              </div>
+            </div>
+
+            <button type="submit" disabled={loading} className="pay-button">
+              {loading ? 'Processing Payment...' : 'Pay 150 EGP Securely'}
+            </button>
+            
+            <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', marginTop: '10px' }}>
+              By clicking "Pay", you agree to our terms of service.
+            </p>
+          </form>
+        </>
       )}
     </div>
   );

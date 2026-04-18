@@ -21,13 +21,75 @@ enum Role {
 // ── User ─────────────────────────────────────────
 
 model User {
-  id            String   @id @default(uuid())
-  email         String   @unique
-  passwordHash  String
-  name          String
-  userRole      Role     @default(CUSTOMER)
-  loyaltyPoints Int      @default(0)
-  phone         String?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  id              String   @id @default(uuid())
+  email           String   @unique
+  passwordHash    String
+  name            String
+  userRole        Role     @default(CUSTOMER)
+  loyaltyPoints   Int      @default(0)
+  phone           String?
+  
+  // Cinema Management
+  managedCinemaId String?  @unique
+  managedCinema   Cinema?  @relation("CinemaManager", fields: [managedCinemaId], references: [id])
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ── Cinema ───────────────────────────────────────
+
+model Cinema {
+  id        String   @id @default(uuid())
+  name      String
+  location  String
+  address   String
+  screens   Int      @default(1)
+  imax      Boolean  @default(false)
+  image     String?
+  
+  // Relationships
+  manager   User?    @relation("CinemaManager")
+  showtimes Showtime[]
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ── Movie ────────────────────────────────────────
+
+model Movie {
+  id          String   @id @default(uuid())
+  tmdbId      Int?     @unique
+  title       String
+  poster      String?
+  backdrop    String?
+  rating      Float    @default(0)
+  duration    Int      @default(0)
+  year        Int
+  genres      String[]
+  
+  // Relationships
+  showtimes   Showtime[]
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ── Showtime ─────────────────────────────────────
+
+model Showtime {
+  id        String   @id @default(uuid())
+  cinemaId  String
+  movieId   String
+  time      String   // Using string for convenience like "7:00 PM"
+  
+  cinema    Cinema   @relation(fields: [cinemaId], references: [id])
+  movie     Movie    @relation(fields: [movieId], references: [id])
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([cinemaId])
+  @@index([movieId])
 }

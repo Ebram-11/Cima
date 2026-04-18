@@ -29,6 +29,10 @@ function Sidebar() {
     { path: '/profile', icon: '👤', label: 'Profile' },
   ];
 
+  if (user?.userRole === 'STAFF' || user?.userRole === 'ADMIN') {
+    navItems.push({ path: '/admin', icon: '🛠️', label: 'Admin Panel' });
+  }
+
   return (
     <>
       <button
