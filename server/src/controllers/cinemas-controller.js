@@ -1,86 +1,135 @@
-// SCRUM-41: Filter Cinemas by Location
-const { LOCATIONS, CINEMAS } = require('../data/cinemas');
-const { MOVIES } = require('../data/movies');
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
 // GET /api/cinemas?location=Cairo
-function getCinemas(req, res) {
-  const { location } = req.query;
+const getCinemas = async (req, res) => {
+  try {
+    const { location } = req.query;
+    
+    const query = {
+      where: {}
+    };
 
-  if (!location || !location.trim()) {
-    return res.json({ cinemas: CINEMAS, total: CINEMAS.length });
+    if (location && location.trim()) {
+      query.where.location = {
+        equals: location.trim(),
+        mode: 'insensitive' // case-insensitive match
+      };
+    }
+
+    const cinemas = await prisma.cinema.findMany(query);
+    res.json({ cinemas, total: cinemas.length });
+  } catch (error) {
+    console.error('Fetch cinemas error:', error);
+    res.status(500).json({ message: 'Error fetching cinemas' });
   }
-
-  const loc = location.trim().toLowerCase();
-  const filtered = CINEMAS.filter(c => c.location.toLowerCase() === loc);
-
-  res.json({ cinemas: filtered, total: filtered.length, appliedLocation: location });
-}
+};
 
 // GET /api/locations
-function getLocations(req, res) {
-  res.json({ locations: LOCATIONS });
-}
+const getLocations = async (req, res) => {
+  try {
+    const cinemas = await prisma.cinema.findMany({
+      select: { location: true },
+      distinct: ['location']
+    });
+    const locations = cinemas.map(c => c.location).sort();
+    res.json({ locations });
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching locations' });
+  }
+};
 
 // GET /api/cinemas/:id
-function getCinemaById(req, res) {
-  const cinemaId = parseInt(req.params.id, 10);
-  const cinema = CINEMAS.find(c => c.id === cinemaId);
-
-  if (!cinema) {
-    return res.status(404).json({ message: 'Cinema not found' });
-  }
-
-  const now = new Date();
-  const currentHours = String(now.getHours()).padStart(2, '0');
-  const currentMinutes = String(now.getMinutes()).padStart(2, '0');
-  const currentTimeStr = `${currentHours}:${currentMinutes}`;
-
-  const allTimes = ['13:00', '15:30', '18:00', '20:30', '23:00'];
-  const futureTimes = allTimes.filter(t => t > currentTimeStr);
-
-  const moviesPlaying = [];
-
-  if (futureTimes.length > 0) {
-    MOVIES.forEach(movie => {
-      const numCinemas = (movie.id % 3) + 3;
-      const startIdx = movie.id % CINEMAS.length;
-      let showsHere = false;
-      
-      for (let i = 0; i < numCinemas; i++) {
-        if (CINEMAS[(startIdx + i) % CINEMAS.length].id === cinemaId) {
-          showsHere = true;
-          break;
-        }
-      }
-
-      if (showsHere) {
-        const timeOffset = (movie.id + cinemaId) % futureTimes.length;
-        const count = ((movie.id + cinemaId) % 2) + 2;
-
-        const times = [];
-        for (let i = 0; i < count; i++) {
-          const tm = futureTimes[(timeOffset + i) % futureTimes.length];
-          if (!times.includes(tm)) times.push(tm);
-        }
-        times.sort();
-
-        if (times.length > 0) {
-          moviesPlaying.push({
-            id: movie.id,
-            title: movie.title,
-            poster: movie.poster,
-            rating: movie.rating,
-            genres: movie.genres,
-            duration: movie.duration,
-            year: movie.year,
-            times
-          });
+const getCinemaById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    const cinema = await prisma.cinema.findUnique({
+      where: { id },
+      include: {
+        showtimes: {
+          include: {
+            movie: true
+          }
         }
       }
     });
+
+    if (!cinema) {
+      return res.status(404).json({ message: 'Cinema not found' });
+    }
+
+    // Group showtimes by movie for the frontend
+    const moviesMap = {};
+    const moviesPlaying = [];
+
+    cinema.showtimes.forEach(st => {
+      if (!moviesMap[st.movieId]) {
+        moviesMap[st.movieId] = {
+          ...st.movie,
+          times: []
+        };
+        moviesPlaying.push(moviesMap[st.movieId]);
+      }
+      moviesMap[st.movieId].times.push(st.time);
+    });
+
+    res.json({ cinema, moviesPlaying });
+  } catch (error) {
+    console.error('Fetch cinema details error:', error);
+    res.status(500).json({ message: 'Error fetching cinema details' });
   }
+};
 
-  res.json({ cinema, moviesPlaying });
-}
+// POST /api/cinemas/:id/movies
+const addMovieToShowtime = async (req, res) => {
+  try {
+    const { id: cinemaId } = req.params;
+    const { movieId, times } = req.body; // times: ["7:00 PM", "9:00 PM"]
 
-module.exports = { getCinemas, getLocations, getCinemaById };
+    if (!movieId || !times || !Array.isArray(times)) {
+      return res.status(400).json({ message: 'Missing movieId or times array.' });
+    }
+
+    // Create showtime records for each time slot
+    const data = times.map(t => ({
+      cinemaId,
+      movieId,
+      time: t
+    }));
+
+    await prisma.showtime.createMany({ data });
+
+    res.status(201).json({ message: 'Movie added to cinema showtimes successfully.' });
+  } catch (error) {
+    console.error('Add movie showtime error:', error);
+    res.status(500).json({ message: 'Error adding movie to showtimes.' });
+  }
+};
+
+// DELETE /api/cinemas/:id/movies/:movieId
+const removeMovieFromShowtime = async (req, res) => {
+  try {
+    const { id: cinemaId, movieId } = req.params;
+
+    await prisma.showtime.deleteMany({
+      where: {
+        cinemaId,
+        movieId
+      }
+    });
+
+    res.json({ message: 'Movie removed from cinema showtimes.' });
+  } catch (error) {
+    console.error('Remove movie showtime error:', error);
+    res.status(500).json({ message: 'Error removing movie from showtimes.' });
+  }
+};
+
+module.exports = { 
+  getCinemas, 
+  getLocations, 
+  getCinemaById, 
+  addMovieToShowtime, 
+  removeMovieFromShowtime 
+};

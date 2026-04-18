@@ -1,15 +1,17 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/auth-context';
-import Sidebar from './components/sidebar';
-import Login from './pages/login';
-import Register from './pages/register';
-import Home from './pages/home';
-import Movies from './pages/movies';
+import Sidebar from './components/Sidebar';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Home from './pages/Home';
+import Movies from './pages/Movies';
 import MovieDetails from './pages/movie-details';
-import Cinemas from './pages/cinemas';
+import Cinemas from './pages/Cinemas';
 import CinemaDetails from './pages/cinema-details';
 import './styles/global.css';
 import Checkout from './pages/Checkout'; 
+import AdminDashboard from './pages/AdminDashboard';
+
 // Protected route wrapper
 function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
@@ -100,11 +102,16 @@ function AppRoutes() {
           <AppLayout><CinemaDetails /></AppLayout>
         </ProtectedRoute>
       } />
-         <Route path="/checkout" element={
-     <ProtectedRoute>
-       <AppLayout><Checkout /></AppLayout>
-     </ProtectedRoute>
-   } />
+      <Route path="/checkout" element={
+        <ProtectedRoute>
+          <AppLayout><Checkout /></AppLayout>
+        </ProtectedRoute>
+      } />
+      <Route path="/admin" element={
+        <ProtectedRoute>
+          <AppLayout><AdminDashboard /></AppLayout>
+        </ProtectedRoute>
+      } />
       <Route path="/profile" element={
         <ProtectedRoute>
           <AppLayout>
