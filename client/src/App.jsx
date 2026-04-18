@@ -4,6 +4,8 @@ import Sidebar from './components/Sidebar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
+import Movies from './pages/Movies';
+import Cinemas from './pages/Cinemas';
 import './styles/global.css';
 
 // Protected route wrapper
@@ -78,22 +80,12 @@ function AppRoutes() {
       } />
       <Route path="/movies" element={
         <ProtectedRoute>
-          <AppLayout>
-            <div style={{ padding: 32 }}>
-              <h1 style={{ fontSize: '1.8rem', fontWeight: 700 }}>🎬 Movies</h1>
-              <p style={{ color: 'var(--text-secondary)', marginTop: 8 }}>Coming soon...</p>
-            </div>
-          </AppLayout>
+          <AppLayout><Movies /></AppLayout>
         </ProtectedRoute>
       } />
       <Route path="/cinemas" element={
         <ProtectedRoute>
-          <AppLayout>
-            <div style={{ padding: 32 }}>
-              <h1 style={{ fontSize: '1.8rem', fontWeight: 700 }}>🏢 Cinemas</h1>
-              <p style={{ color: 'var(--text-secondary)', marginTop: 8 }}>Coming soon...</p>
-            </div>
-          </AppLayout>
+          <AppLayout><Cinemas /></AppLayout>
         </ProtectedRoute>
       } />
       <Route path="/profile" element={
