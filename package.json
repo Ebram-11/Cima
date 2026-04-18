@@ -1,0 +1,23 @@
+{
+  "name": "cima",
+  "version": "1.0.0",
+  "description": "Cima — Cinema Booking System",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "install:all": "cd client && npm install && cd ../server && npm install"
+  },
+  "keywords": [
+    "cinema",
+    "booking",
+    "movies",
+    "egypt"
+  ],
+  "author": "Ebram",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

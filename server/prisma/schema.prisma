@@ -1,0 +1,33 @@
+// Prisma schema for Cima Cinema Booking System
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ── Enums ────────────────────────────────────────
+
+enum Role {
+  CUSTOMER
+  ADMIN
+  STAFF
+  SUPPORT
+}
+
+// ── User ─────────────────────────────────────────
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  passwordHash  String
+  name          String
+  userRole      Role     @default(CUSTOMER)
+  loyaltyPoints Int      @default(0)
+  phone         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
