@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'cima-dev-secret-key-change-in-production';
 
-const auth-middleware = (req, res, next) => {
+const authMiddleware = (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
 
@@ -20,4 +20,4 @@ const auth-middleware = (req, res, next) => {
   }
 };
 
-module.exports = { auth-middleware, JWT_SECRET };
+module.exports = { authMiddleware, JWT_SECRET };

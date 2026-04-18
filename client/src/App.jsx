@@ -7,6 +7,7 @@ import Home from './pages/home';
 import Movies from './pages/movies';
 import MovieDetails from './pages/movie-details';
 import Cinemas from './pages/cinemas';
+import CinemaDetails from './pages/cinema-details';
 import './styles/global.css';
 
 // Protected route wrapper
@@ -92,6 +93,11 @@ function AppRoutes() {
       <Route path="/cinemas" element={
         <ProtectedRoute>
           <AppLayout><Cinemas /></AppLayout>
+        </ProtectedRoute>
+      } />
+      <Route path="/cinemas/:id" element={
+        <ProtectedRoute>
+          <AppLayout><CinemaDetails /></AppLayout>
         </ProtectedRoute>
       } />
       <Route path="/profile" element={

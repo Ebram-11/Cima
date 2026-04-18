@@ -82,6 +82,9 @@ const api = {
     locations() {
       return api.request('/cinemas/locations');
     },
+    getById(id) {
+      return api.request(`/cinemas/${id}`);
+    }
   },
 };
 
