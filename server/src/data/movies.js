@@ -1,5 +1,3 @@
-// Seed movie data parsed from movies.csv. In-memory, no DB required.
-
 const GENRES = [
   "Action",
   "Adventure",
@@ -27,10 +25,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 7.2,
+    "rating": 7.602,
     "duration": 162,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Avatar",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Avatar",
+    "poster": "https://image.tmdb.org/t/p/w500/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/vL5LR6WdxWPjLPFRLe133jXWsh5.jpg",
     "year": 2009
   },
   {
@@ -41,10 +39,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 6.9,
+    "rating": 7.266,
     "duration": 169,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Pirates%20of%20the%20Caribbean%3A%20At%20World's%20End",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Pirates%20of%20the%20Caribbean%3A%20At%20World's%20End",
+    "poster": "https://image.tmdb.org/t/p/w500/jGWpG4YhpQwVmjyHEGkxEkeRf0S.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/1jHxkVXMI5s3vRiyiZooUy1shB5.jpg",
     "year": 2007
   },
   {
@@ -55,10 +53,10 @@ const MOVIES = [
       "Action",
       "Crime"
     ],
-    "rating": 6.3,
+    "rating": 6.569,
     "duration": 148,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Spectre",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Spectre",
+    "poster": "https://image.tmdb.org/t/p/w500/zj8ongFhtWNsVlfjOGo8pSr7PQg.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/8lBViysvNJBPkl6zG1LVAaW3qhj.jpg",
     "year": 2015
   },
   {
@@ -70,10 +68,10 @@ const MOVIES = [
       "Action",
       "Crime"
     ],
-    "rating": 7.6,
+    "rating": 7.793,
     "duration": 165,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=The%20Dark%20Knight%20Rises",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=The%20Dark%20Knight%20Rises",
+    "poster": "https://image.tmdb.org/t/p/w500/hr0L2aueqlP2BYUblTTjmtn0hw4.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/y2DB71C4nyIdMrANijz8mzvQtk6.jpg",
     "year": 2012
   },
   {
@@ -84,10 +82,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 6.1,
+    "rating": 6.36,
     "duration": 132,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=John%20Carter",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=John%20Carter",
+    "poster": "https://image.tmdb.org/t/p/w500/lCxz1Yus07QCQQCb6I0Dr3Lmqpx.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/hj5RynBrJB1Wlz84t3lJj9DuTJh.jpg",
     "year": 2012
   },
   {
@@ -98,10 +96,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 5.9,
+    "rating": 6.454,
     "duration": 139,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Spider-Man%203",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Spider-Man%203",
+    "poster": "https://image.tmdb.org/t/p/w500/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/w1oD1MzHjnBJc5snKupIQaSBLIh.jpg",
     "year": 2007
   },
   {
@@ -111,10 +109,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 7.4,
+    "rating": 7.61,
     "duration": 100,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Tangled",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Tangled",
+    "poster": "https://image.tmdb.org/t/p/w500/ym7Kst6a4uodryxqbGOxmewF235.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/cWczNud8Y8i8ab0Z4bxos4myWYO.jpg",
     "year": 2010
   },
   {
@@ -125,10 +123,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 7.3,
+    "rating": 7.27,
     "duration": 141,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Avengers%3A%20Age%20of%20Ultron",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Avengers%3A%20Age%20of%20Ultron",
+    "poster": "https://image.tmdb.org/t/p/w500/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/kIBK5SKwgqIIuRKhhWrJn3XkbPq.jpg",
     "year": 2015
   },
   {
@@ -139,10 +137,10 @@ const MOVIES = [
       "Fantasy",
       "Family"
     ],
-    "rating": 7.4,
+    "rating": 7.681,
     "duration": 153,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Harry%20Potter%20and%20the%20Half-Blood%20Prince",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Harry%20Potter%20and%20the%20Half-Blood%20Prince",
+    "poster": "https://image.tmdb.org/t/p/w500/z7uo9zmQdQwU5ZJHFpv2Upl30i1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/ze6Mx4QE5mQVXRYmG2flncqqle4.jpg",
     "year": 2009
   },
   {
@@ -153,10 +151,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 5.7,
+    "rating": 5.992,
     "duration": 151,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Batman%20v%20Superman%3A%20Dawn%20of%20Justice",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Batman%20v%20Superman%3A%20Dawn%20of%20Justice",
+    "poster": "https://image.tmdb.org/t/p/w500/5UsK3grJvtQrtzEgqNlDljJW96w.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/5fX1oSGuYdKgwWmUTAN5MNSQGzr.jpg",
     "year": 2016
   },
   {
@@ -168,10 +166,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 5.4,
+    "rating": 5.801,
     "duration": 154,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Superman%20Returns",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Superman%20Returns",
+    "poster": "https://image.tmdb.org/t/p/w500/385XwTQZDpRX2d3kxtnpiLrjBXw.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/aTBsOF7JDQQlwO9Od2iQJEuSRWR.jpg",
     "year": 2006
   },
   {
@@ -183,10 +181,10 @@ const MOVIES = [
       "Action",
       "Crime"
     ],
-    "rating": 6.1,
+    "rating": 6.336,
     "duration": 106,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Quantum%20of%20Solace",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Quantum%20of%20Solace",
+    "poster": "https://image.tmdb.org/t/p/w500/e3DXXLJHGqMx9yYpXsql1XNljmM.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/3CqMIX3ZlrD0pU3fpBL6DM0Cneb.jpg",
     "year": 2008
   },
   {
@@ -197,10 +195,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 7,
+    "rating": 7.375,
     "duration": 151,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Pirates%20of%20the%20Caribbean%3A%20Dead%20Man's%20Chest",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Pirates%20of%20the%20Caribbean%3A%20Dead%20Man's%20Chest",
+    "poster": "https://image.tmdb.org/t/p/w500/uXEqmloGyP7UXAiphJUu2v2pcuE.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/vr6n6ZFUZvedvIlhfYcbCWcaKyW.jpg",
     "year": 2006
   },
   {
@@ -211,10 +209,10 @@ const MOVIES = [
       "Western",
       "Action"
     ],
-    "rating": 5.9,
+    "rating": 6.122,
     "duration": 149,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=The%20Lone%20Ranger",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=The%20Lone%20Ranger",
+    "poster": "https://image.tmdb.org/t/p/w500/yDuJGq8biNMW7zM3w95UaDJv0KG.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/vHd8RTXTGFwexUC2Mj1HOgSy9J3.jpg",
     "year": 2013
   },
   {
@@ -226,10 +224,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 6.5,
+    "rating": 6.642,
     "duration": 143,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Man%20of%20Steel",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Man%20of%20Steel",
+    "poster": "https://image.tmdb.org/t/p/w500/8GFtkImmK0K1VaUChR0n9O61CFU.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/dlPw6SESWNudgriKvNxJJLJryLq.jpg",
     "year": 2013
   },
   {
@@ -240,10 +238,10 @@ const MOVIES = [
       "Fantasy",
       "Family"
     ],
-    "rating": 6.3,
+    "rating": 6.629,
     "duration": 150,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=The%20Chronicles%20of%20Narnia%3A%20Prince%20Caspian",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=The%20Chronicles%20of%20Narnia%3A%20Prince%20Caspian",
+    "poster": "https://image.tmdb.org/t/p/w500/qxz3WIyjZiSKUhaTIEJ3c1GcC9z.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/9pBv1BOSloAUgAkF0meJWdnbV4Q.jpg",
     "year": 2008
   },
   {
@@ -254,10 +252,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 7.4,
+    "rating": 8,
     "duration": 143,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=The%20Avengers",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=The%20Avengers",
+    "poster": "https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg",
     "year": 2012
   },
   {
@@ -268,10 +266,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 6.4,
+    "rating": 6.566,
     "duration": 136,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Pirates%20of%20the%20Caribbean%3A%20On%20Stranger%20Tides",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Pirates%20of%20the%20Caribbean%3A%20On%20Stranger%20Tides",
+    "poster": "https://image.tmdb.org/t/p/w500/keGfSvCmYj7CvdRx36OdVrAEibE.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/uzIGtyS6bbnJzGsPL93WCF1FWm8.jpg",
     "year": 2011
   },
   {
@@ -282,10 +280,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 6.2,
+    "rating": 6.541,
     "duration": 106,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Men%20in%20Black%203",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Men%20in%20Black%203",
+    "poster": "https://image.tmdb.org/t/p/w500/90DdoEStzeObs96fsYf4GG544iN.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/5AhpUb8CAP0jZ4Wrn7AsRUYjZxB.jpg",
     "year": 2012
   },
   {
@@ -296,10 +294,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 7.1,
+    "rating": 7.332,
     "duration": 144,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=The%20Hobbit%3A%20The%20Battle%20of%20the%20Five%20Armies",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=The%20Hobbit%3A%20The%20Battle%20of%20the%20Five%20Armies",
+    "poster": "https://image.tmdb.org/t/p/w500/xT98tLqatZPQApyRmlPL12LtiWp.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/3UbaCMmqOd7mca4Y5DOzY2ZVTyX.jpg",
     "year": 2014
   },
   {
@@ -310,10 +308,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 6.5,
+    "rating": 6.732,
     "duration": 136,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=The%20Amazing%20Spider-Man",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=The%20Amazing%20Spider-Man",
+    "poster": "https://image.tmdb.org/t/p/w500/jexoNYnPd6vVrmygwF6QZmWPFdu.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/HVcza6tJtWFrLriuh3Ano4Vt46.jpg",
     "year": 2012
   },
   {
@@ -323,10 +321,10 @@ const MOVIES = [
       "Adventure",
       "Action"
     ],
-    "rating": 6.2,
+    "rating": 6.395,
     "duration": 140,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Robin%20Hood",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Robin%20Hood",
+    "poster": "https://image.tmdb.org/t/p/w500/ldOLoEroWISvPvqTY2IgnuEUWTq.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/gOi18HJqiuOYoXMH4CgpFnTHgUJ.jpg",
     "year": 2010
   },
   {
@@ -336,10 +334,10 @@ const MOVIES = [
       "Adventure",
       "Fantasy"
     ],
-    "rating": 7.6,
+    "rating": 7.577,
     "duration": 161,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=The%20Hobbit%3A%20The%20Desolation%20of%20Smaug",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=The%20Hobbit%3A%20The%20Desolation%20of%20Smaug",
+    "poster": "https://image.tmdb.org/t/p/w500/xQYiXsheRCDBA39DOrmaw1aSpbk.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/hwPnxzIgQFfXl5zP0Yh8bViCMzf.jpg",
     "year": 2013
   },
   {
@@ -349,10 +347,10 @@ const MOVIES = [
       "Adventure",
       "Fantasy"
     ],
-    "rating": 5.8,
+    "rating": 6.082,
     "duration": 113,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=The%20Golden%20Compass",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=The%20Golden%20Compass",
+    "poster": "https://image.tmdb.org/t/p/w500/mIHV28g4Zhbc8yhnhOixa8m4p5O.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/qifYc5jT4CZxmLH9DfOlipioSPp.jpg",
     "year": 2007
   },
   {
@@ -363,10 +361,10 @@ const MOVIES = [
       "Action",
       "Drama"
     ],
-    "rating": 6.6,
+    "rating": 6.887,
     "duration": 187,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=King%20Kong",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=King%20Kong",
+    "poster": "https://image.tmdb.org/t/p/w500/6a2HY6UmD7XiDD3NokgaBAXEsD2.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/mRM2NB0i3wv4HqxXvwIjEVi4Qqq.jpg",
     "year": 2005
   },
   {
@@ -377,10 +375,10 @@ const MOVIES = [
       "Thriller",
       "Drama"
     ],
-    "rating": 7.5,
+    "rating": 7.902,
     "duration": 194,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Titanic",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Titanic",
+    "poster": "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/qBChUbS8ksbJoPTfZpogsnxG5tY.jpg",
     "year": 1997
   },
   {
@@ -391,10 +389,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 7.1,
+    "rating": 7.447,
     "duration": 147,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Captain%20America%3A%20Civil%20War",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Captain%20America%3A%20Civil%20War",
+    "poster": "https://image.tmdb.org/t/p/w500/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/wdwcOBMkt3zmPQuEMxB3FUtMio2.jpg",
     "year": 2016
   },
   {
@@ -406,10 +404,10 @@ const MOVIES = [
       "Action",
       "Thriller"
     ],
-    "rating": 5.5,
+    "rating": 5.883,
     "duration": 131,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Battleship",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Battleship",
+    "poster": "https://image.tmdb.org/t/p/w500/9b0Im7SfedHiajTwzSL9zGyBI7M.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/85PMh0cKywekAJYDnRXfezYAmEc.jpg",
     "year": 2012
   },
   {
@@ -421,10 +419,10 @@ const MOVIES = [
       "Action",
       "Thriller"
     ],
-    "rating": 6.5,
+    "rating": 6.699,
     "duration": 124,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Jurassic%20World",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Jurassic%20World",
+    "poster": "https://image.tmdb.org/t/p/w500/rhr4y79GpxQF9IsfJItRXVaoGs4.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/s5QfDFqRO6sjgPtKkjxD0WqXQef.jpg",
     "year": 2015
   },
   {
@@ -435,10 +433,10 @@ const MOVIES = [
       "Action",
       "Thriller"
     ],
-    "rating": 6.9,
+    "rating": 7.26,
     "duration": 143,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Skyfall",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Skyfall",
+    "poster": "https://image.tmdb.org/t/p/w500/d0IVecFQvsGdSbnMAHqiYsNYaJT.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/qB2eFmGEh5YCzhXUpz7As2PaDCh.jpg",
     "year": 2012
   },
   {
@@ -449,10 +447,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 6.7,
+    "rating": 7.303,
     "duration": 127,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Spider-Man%202",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Spider-Man%202",
+    "poster": "https://image.tmdb.org/t/p/w500/eg8XHjA7jkM3ulBLnfGTczR9ytI.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/6al048Lat3eLVQOuKtc9h6Tu94d.jpg",
     "year": 2004
   },
   {
@@ -463,10 +461,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 6.8,
+    "rating": 6.931,
     "duration": 130,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Iron%20Man%203",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Iron%20Man%203",
+    "poster": "https://image.tmdb.org/t/p/w500/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/iVped1djsF0tvGkvnHbzsE3ZPTF.jpg",
     "year": 2013
   },
   {
@@ -477,10 +475,10 @@ const MOVIES = [
       "Fantasy",
       "Family"
     ],
-    "rating": 6.4,
+    "rating": 6.639,
     "duration": 108,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Alice%20in%20Wonderland",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Alice%20in%20Wonderland",
+    "poster": "https://image.tmdb.org/t/p/w500/o0kre9wRCZz3jjSjaru7QU0UtFz.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/ocOWbTzHcJVTw9Tz173KPeskDOP.jpg",
     "year": 2010
   },
   {
@@ -492,10 +490,10 @@ const MOVIES = [
       "Action",
       "Thriller"
     ],
-    "rating": 6.3,
+    "rating": 6.418,
     "duration": 104,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=X-Men%3A%20The%20Last%20Stand",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=X-Men%3A%20The%20Last%20Stand",
+    "poster": "https://image.tmdb.org/t/p/w500/a2xicU8DpKtRizOHjQLC1JyCSRS.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/sBl1n4Oi2wX81EtXIb8NsPqJf3W.jpg",
     "year": 2006
   },
   {
@@ -505,10 +503,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 7,
+    "rating": 7.046,
     "duration": 104,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Monsters%20University",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Monsters%20University",
+    "poster": "https://image.tmdb.org/t/p/w500/y7thwJ7z5Bplv6vwl6RI0yteaDD.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/hmAOMwVeJfdWXgK1Ikyl2eYkE99.jpg",
     "year": 2013
   },
   {
@@ -519,10 +517,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 6,
+    "rating": 6.21,
     "duration": 150,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Transformers%3A%20Revenge%20of%20the%20Fallen",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Transformers%3A%20Revenge%20of%20the%20Fallen",
+    "poster": "https://image.tmdb.org/t/p/w500/pLBb0whOzVDtJvyD4DPeQyQNOqp.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/bH1bhjn37uA1zOPvyHbzJSvza7v.jpg",
     "year": 2009
   },
   {
@@ -533,10 +531,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 5.8,
+    "rating": 5.958,
     "duration": 165,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Transformers%3A%20Age%20of%20Extinction",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Transformers%3A%20Age%20of%20Extinction",
+    "poster": "https://image.tmdb.org/t/p/w500/jyzrfx2WaeY60kYZpPYepSjGz4S.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/wxr4Z6E83h14CogsZOzDm1vuDX3.jpg",
     "year": 2014
   },
   {
@@ -547,10 +545,10 @@ const MOVIES = [
       "Fantasy",
       "Family"
     ],
-    "rating": 5.7,
+    "rating": 5.932,
     "duration": 130,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Oz%3A%20The%20Great%20and%20Powerful",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Oz%3A%20The%20Great%20and%20Powerful",
+    "poster": "https://image.tmdb.org/t/p/w500/tkzfAUEKoUp4YFNbZV9hfpZOz0z.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/o6TYNmB1CT85j7lmyvSedoybyc9.jpg",
     "year": 2013
   },
   {
@@ -561,10 +559,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 6.5,
+    "rating": 6.532,
     "duration": 142,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=The%20Amazing%20Spider-Man%202",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=The%20Amazing%20Spider-Man%202",
+    "poster": "https://image.tmdb.org/t/p/w500/bU7nTmvmy0h3VUP01v1T2imgH6N.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/k0hlAzTryCYX1O1LyC6P8tAa8s0.jpg",
     "year": 2014
   },
   {
@@ -575,10 +573,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 6.3,
+    "rating": 6.539,
     "duration": 125,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=TRON%3A%20Legacy",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=TRON%3A%20Legacy",
+    "poster": "https://image.tmdb.org/t/p/w500/8Nc6R8k7bG8frSiDJo0oLucF7dN.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/uUa6jgSr5BQpcBhhaz1PV1JhSa4.jpg",
     "year": 2010
   },
   {
@@ -590,10 +588,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 5.8,
+    "rating": 6.176,
     "duration": 106,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Cars%202",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Cars%202",
+    "poster": "https://image.tmdb.org/t/p/w500/okIz1HyxeVOMzYwwHUjH2pHi74I.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/4BS8tgBNWg2jPiDlBwM2iJe1xB7.jpg",
     "year": 2011
   },
   {
@@ -605,10 +603,10 @@ const MOVIES = [
       "Action",
       "Thriller"
     ],
-    "rating": 5.1,
+    "rating": 5.181,
     "duration": 114,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Green%20Lantern",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Green%20Lantern",
+    "poster": "https://image.tmdb.org/t/p/w500/fj21HwUprqjjwTdkKC1XZurRSpV.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/tS3ByIQR6V61DaWhEIFbLSuLK5Q.jpg",
     "year": 2011
   },
   {
@@ -619,10 +617,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 7.6,
+    "rating": 7.804,
     "duration": 103,
-    "poster": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK1DVfjko.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/uAfhsySkr1UzQg1zdg3dZQRz9Fd.jpg",
     "year": 2010
   },
   {
@@ -633,10 +631,10 @@ const MOVIES = [
       "Action",
       "Thriller"
     ],
-    "rating": 5.9,
+    "rating": 6.084,
     "duration": 115,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Terminator%20Salvation",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Terminator%20Salvation",
+    "poster": "https://image.tmdb.org/t/p/w500/gw6JhlekZgtKUFlDTezq3j5JEPK.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/uifaXfJxjTMeNttw5u04nHx1G5w.jpg",
     "year": 2009
   },
   {
@@ -645,10 +643,10 @@ const MOVIES = [
     "genres": [
       "Action"
     ],
-    "rating": 7.3,
+    "rating": 7.2,
     "duration": 137,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Furious%207",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Furious%207",
+    "poster": "https://image.tmdb.org/t/p/w500/ktofZ9Htrjiy0P6LEowsDaxd3Ri.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/ehzI1mVcnHqB58NqPyQwpMqcVoz.jpg",
     "year": 2015
   },
   {
@@ -661,10 +659,10 @@ const MOVIES = [
       "Drama",
       "Horror"
     ],
-    "rating": 6.7,
+    "rating": 6.825,
     "duration": 116,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=World%20War%20Z",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=World%20War%20Z",
+    "poster": "https://image.tmdb.org/t/p/w500/aCnVdvExw6UWSeQfr0tUH3jr4qG.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/31VpBgUX5O4Z3dn5ZbX8HLqoXH3.jpg",
     "year": 2013
   },
   {
@@ -676,10 +674,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 7.5,
+    "rating": 7.53,
     "duration": 131,
-    "poster": "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRy4iKrj2GP4p.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/tYfijzolzgoMOtegh1Y7j2Enorg.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/fctQU5MoXgJ5pNMljFzlEFXwfSu.jpg",
     "year": 2014
   },
   {
@@ -690,10 +688,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 7.4,
+    "rating": 7.319,
     "duration": 132,
-    "poster": "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xg27NrXi7VXCGUr7MN75UqLl6Vg.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/Aim3kVNh1MPIxPEFeJrl9e9Uf1a.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/npDrIM6ZbuD7nUxI7ZzNBxs4IRF.jpg",
     "year": 2013
   },
   {
@@ -704,10 +702,10 @@ const MOVIES = [
       "Family",
       "Action"
     ],
-    "rating": 5.5,
+    "rating": 5.871,
     "duration": 114,
-    "poster": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/9jSI7saUX9Qz0JLh19jX2ulEwL7.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/djSAd6HUm66eVNC3PiZbYwOpD5A.jpg",
     "year": 2013
   },
   {
@@ -717,10 +715,10 @@ const MOVIES = [
       "Romance",
       "Drama"
     ],
-    "rating": 7.3,
+    "rating": 7.353,
     "duration": 143,
-    "poster": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/b0PlSFdDwbyFAJlME0banwYYgJN.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/tyxfCBQv6Ap74jcu3xd7aBiaa29.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/5mQZqk2qSJCsYmvw1cQJLEcLNYM.jpg",
     "year": 2013
   },
   {
@@ -732,10 +730,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 6.2,
+    "rating": 6.296,
     "duration": 116,
-    "poster": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK1DVfjko.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/siNGMLdOUNYLEGtlsnmQcpO2XZX.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/iP0capCU4w5nxCDl398CH7yR1r9.jpg",
     "year": 2010
   },
   {
@@ -746,10 +744,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 6.7,
+    "rating": 6.918,
     "duration": 131,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Pacific%20Rim",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Pacific%20Rim",
+    "poster": "https://image.tmdb.org/t/p/w500/8wo4eN8dWKaKlxhSvBz19uvj8gA.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/9X7Im1YuBhyHYVD8r7CAONPJR5k.jpg",
     "year": 2013
   },
   {
@@ -760,10 +758,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 6.1,
+    "rating": 6.223,
     "duration": 154,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Transformers%3A%20Dark%20of%20the%20Moon",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Transformers%3A%20Dark%20of%20the%20Moon",
+    "poster": "https://image.tmdb.org/t/p/w500/28YlCLrFhONteYSs9hKjD1Km0Cj.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/h3js4rulxzKMOokM2oO5Kr0mBZU.jpg",
     "year": 2011
   },
   {
@@ -773,10 +771,10 @@ const MOVIES = [
       "Adventure",
       "Action"
     ],
-    "rating": 5.7,
+    "rating": 6.022,
     "duration": 122,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Indiana%20Jones%20and%20the%20Kingdom%20of%20the%20Crystal%20Skull",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Indiana%20Jones%20and%20the%20Kingdom%20of%20the%20Crystal%20Skull",
+    "poster": "https://image.tmdb.org/t/p/w500/56As6XEM1flWvprX4LgkPl8ii4K.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/p96949hcwUG2BwE6MgKmw0uYNCx.jpg",
     "year": 2008
   },
   {
@@ -787,10 +785,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 6.6,
+    "rating": 6.7,
     "duration": 93,
-    "poster": "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRy4iKrj2GP4p.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/8RSkxOO80btfKjyiC5ZiTaCHIT8.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/cF3H9pyUF6dsvqlYUcH0TyBAMTG.jpg",
     "year": 2015
   },
   {
@@ -803,10 +801,10 @@ const MOVIES = [
       "Adventure",
       "Comedy"
     ],
-    "rating": 6.7,
+    "rating": 7.022,
     "duration": 93,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Brave",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Brave",
+    "poster": "https://image.tmdb.org/t/p/w500/1XAuDtMWpL0sYSFK0R6EZate2Ux.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/qx9ts2hBYJrkIQxhryitxnLlm2u.jpg",
     "year": 2012
   },
   {
@@ -817,10 +815,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 6.6,
+    "rating": 6.783,
     "duration": 122,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Star%20Trek%20Beyond",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Star%20Trek%20Beyond",
+    "poster": "https://image.tmdb.org/t/p/w500/m7SHlvcGfCkbzk2xP7XHDOI6o93.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/r2ZBqkOCWSEp3z7gmpjSJ8k3kCK.jpg",
     "year": 2016
   },
   {
@@ -830,10 +828,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 7.8,
+    "rating": 8.11,
     "duration": 98,
-    "poster": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/b0PlSFdDwbyFAJlME0banwYYgJN.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/hbhFnRzzg6ZDmm8YAmxBnQpQIPh.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/ai2FicMUxLCurVkjtYdSvVDWRmS.jpg",
     "year": 2008
   },
   {
@@ -845,10 +843,10 @@ const MOVIES = [
       "Action",
       "Crime"
     ],
-    "rating": 6.1,
+    "rating": 6.487,
     "duration": 91,
-    "poster": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK1DVfjko.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/mp9CzKxLa2i7yblMXUrzVfGqsCo.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/ozsLB1HRCN6ZAmJN89pWtoiAwnb.jpg",
     "year": 2007
   },
   {
@@ -859,10 +857,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 5.6,
+    "rating": 5.873,
     "duration": 158,
-    "poster": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/c2PkTPT5D9zB8SIm5wNlDAANEqM.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/jCvkDqWWBrgxf9R3DrtJ6GpqXse.jpg",
     "year": 2009
   },
   {
@@ -872,10 +870,10 @@ const MOVIES = [
       "Drama",
       "Animation"
     ],
-    "rating": 6.6,
+    "rating": 6.905,
     "duration": 96,
-    "poster": "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/xNwlAIdx1Ln28GRiQttUP9Gojy2.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/uocpNfrP0Vvnf2UxykXuIR1HNUd.jpg",
     "year": 2009
   },
   {
@@ -887,10 +885,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 5.2,
+    "rating": 5.46,
     "duration": 124,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Jupiter%20Ascending",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Jupiter%20Ascending",
+    "poster": "https://image.tmdb.org/t/p/w500/2NCcAZ3M3F0FxENYmammBknwpVn.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/w4hk4QG05nDuSgimpa7XAM6OyPX.jpg",
     "year": 2015
   },
   {
@@ -900,10 +898,10 @@ const MOVIES = [
       "Adventure",
       "Action"
     ],
-    "rating": 5.5,
+    "rating": 5.915,
     "duration": 109,
-    "poster": "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRy4iKrj2GP4p.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/eJrfz178xBGlxjDGxnBXTzWWa4w.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/btCaMm9aVW1PG485Ef8RMBBALzI.jpg",
     "year": 2016
   },
   {
@@ -914,10 +912,10 @@ const MOVIES = [
       "Fantasy",
       "Family"
     ],
-    "rating": 6.7,
+    "rating": 7.136,
     "duration": 143,
-    "poster": "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xg27NrXi7VXCGUr7MN75UqLl6Vg.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/iREd0rNCjYdf5Ar0vfaW32yrkm.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/tuDhEdza074bA497bO9WFEPs6O6.jpg",
     "year": 2005
   },
   {
@@ -926,10 +924,10 @@ const MOVIES = [
     "genres": [
       "Sci-Fi"
     ],
-    "rating": 6.4,
+    "rating": 6.522,
     "duration": 144,
-    "poster": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/2mtQwJKVKQrZgTz49Dizb25eOQQ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/sTQNRqLbfCXolrb5CizAW1dj528.jpg",
     "year": 2016
   },
   {
@@ -941,10 +939,10 @@ const MOVIES = [
       "Action",
       "Crime"
     ],
-    "rating": 8.2,
+    "rating": 8.528,
     "duration": 152,
-    "poster": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/b0PlSFdDwbyFAJlME0banwYYgJN.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/cfT29Im5VDvjE0RpyKOSdCKZal7.jpg",
     "year": 2008
   },
   {
@@ -956,10 +954,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 7.7,
+    "rating": 7.959,
     "duration": 96,
-    "poster": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK1DVfjko.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/mFvoEwSfLqbcWwFsDjQebn9bzFe.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/hGGC9gKo7CFE3fW07RA587e5kol.jpg",
     "year": 2009
   },
   {
@@ -971,10 +969,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 6,
+    "rating": 6.241,
     "duration": 94,
-    "poster": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/hpHarddVj34j53T7NsoUGdKj4mP.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/fbxZeJEcyf76oEQIGmotlclwmiH.jpg",
     "year": 2009
   },
   {
@@ -985,10 +983,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 7.4,
+    "rating": 7.657,
     "duration": 126,
-    "poster": "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
     "year": 2008
   },
   {
@@ -999,10 +997,10 @@ const MOVIES = [
       "Family",
       "Drama"
     ],
-    "rating": 7,
+    "rating": 7.174,
     "duration": 126,
-    "poster": "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/1dxRq3o3l3bVWNRvvSb7rRf68qp.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/Aj81Gu3u1a64qXFOLDuF5gdxyy0.jpg",
     "year": 2011
   },
   {
@@ -1015,10 +1013,10 @@ const MOVIES = [
       "Adventure",
       "Comedy"
     ],
-    "rating": 5.1,
+    "rating": 5.32,
     "duration": 106,
-    "poster": "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRy4iKrj2GP4p.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/mCdo7nykEVCa25bjnkwgyX35fjm.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/tbzWgnaqhFwN5mCIiwbgN5oiw0V.jpg",
     "year": 1999
   },
   {
@@ -1029,10 +1027,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 5.2,
+    "rating": 5.513,
     "duration": 112,
-    "poster": "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xg27NrXi7VXCGUr7MN75UqLl6Vg.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/A3acM1lX5PNWQa6r5qeMAJOxbnT.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/W034dd7w2malON26KWyZm4y37W.jpg",
     "year": 2008
   },
   {
@@ -1045,10 +1043,10 @@ const MOVIES = [
       "Fantasy",
       "Adventure"
     ],
-    "rating": 5.9,
+    "rating": 5.917,
     "duration": 123,
-    "poster": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/sk3FZgh3sRrmr8vyhaitNobMcfh.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/wAk0yKrhAmvsoMvlKs4QImhvK5X.jpg",
     "year": 2016
   },
   {
@@ -1059,10 +1057,10 @@ const MOVIES = [
       "Fantasy",
       "Family"
     ],
-    "rating": 5.3,
+    "rating": 5.585,
     "duration": 96,
-    "poster": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/b0PlSFdDwbyFAJlME0banwYYgJN.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/blI1ioXbgJWOJ3PbcBuSV65Ebwu.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/yVwCXQzSZvg9H0YBXvzPfSs6Vqx.jpg",
     "year": 2007
   },
   {
@@ -1072,10 +1070,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 7.6,
+    "rating": 7.637,
     "duration": 113,
-    "poster": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK1DVfjko.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/nBM9MMa2WCwvMG4IJ3eiGUdbPe6.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/4V1yIoAKPMRQwGBaSses8Bp2nsi.jpg",
     "year": 2014
   },
   {
@@ -1085,10 +1083,10 @@ const MOVIES = [
       "Adventure",
       "Action"
     ],
-    "rating": 5.9,
+    "rating": 6.224,
     "duration": 135,
-    "poster": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/X4UyUO5jgzs3c5YafnmYKLKKYw.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/yaIu82UiD9QZEkKCGrAd8VAmc0V.jpg",
     "year": 1995
   },
   {
@@ -1100,10 +1098,10 @@ const MOVIES = [
       "Action",
       "Thriller"
     ],
-    "rating": 5.6,
+    "rating": 5.783,
     "duration": 118,
-    "poster": "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/mc9b25IAprHfsaOz0wTshOwGHcY.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/jE5wVBRCGQzjHjvFUcYwGS4x0ux.jpg",
     "year": 2009
   },
   {
@@ -1115,10 +1113,10 @@ const MOVIES = [
       "Drama",
       "Animation"
     ],
-    "rating": 8,
+    "rating": 7.91,
     "duration": 94,
-    "poster": "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/o3i6AfTcWAuNvzAUV3q5lOmi6Gx.jpg",
     "year": 2015
   },
   {
@@ -1130,10 +1128,10 @@ const MOVIES = [
       "Family",
       "Drama"
     ],
-    "rating": 6.7,
+    "rating": 6.871,
     "duration": 106,
-    "poster": "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRy4iKrj2GP4p.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/2Epx7F9X7DrFptn4seqn4mzBVks.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/8oYykF1Qhrb8fC2qZqD71EzRywg.jpg",
     "year": 2016
   },
   {
@@ -1144,10 +1142,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 6.6,
+    "rating": 6.851,
     "duration": 124,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Iron%20Man%202",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Iron%20Man%202",
+    "poster": "https://image.tmdb.org/t/p/w500/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/7lmBufEG7P7Y1HClYK3gCxYrkgS.jpg",
     "year": 2010
   },
   {
@@ -1158,10 +1156,10 @@ const MOVIES = [
       "Fantasy",
       "Drama"
     ],
-    "rating": 5.8,
+    "rating": 5.988,
     "duration": 127,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Snow%20White%20and%20the%20Huntsman",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Snow%20White%20and%20the%20Huntsman",
+    "poster": "https://image.tmdb.org/t/p/w500/8HUa5kRubYbnAD5UVpnhTGGgMTW.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/KBe9fHU5rVg4daoKnFwl1Cbc28.jpg",
     "year": 2012
   },
   {
@@ -1174,10 +1172,10 @@ const MOVIES = [
       "Adventure",
       "Romance"
     ],
-    "rating": 7,
+    "rating": 7.087,
     "duration": 97,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Maleficent",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Maleficent",
+    "poster": "https://image.tmdb.org/t/p/w500/bDG3yei6AJlEAK3A5wN7RwFXQ7V.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/bNiiUCQUD7ij5Ybh2GoWSZwqAb1.jpg",
     "year": 2014
   },
   {
@@ -1189,10 +1187,10 @@ const MOVIES = [
       "Action",
       "Drama"
     ],
-    "rating": 7.3,
+    "rating": 7.337,
     "duration": 130,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Dawn%20of%20the%20Planet%20of%20the%20Apes",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Dawn%20of%20the%20Planet%20of%20the%20Apes",
+    "poster": "https://image.tmdb.org/t/p/w500/mSmAc9G25fhOHH45SLEeagR0qi7.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/3SozaNPOYUadcmTPgndDibMyDNC.jpg",
     "year": 2014
   },
   {
@@ -1206,8 +1204,8 @@ const MOVIES = [
     ],
     "rating": 4.8,
     "duration": 109,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=The%20Lovers",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=The%20Lovers",
+    "poster": "https://image.tmdb.org/t/p/w500/6esL8UH2sXXqbfbaV6bFEUBCDOr.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/bHDQPPXx5hxkrg7oE9TJXrFHUSg.jpg",
     "year": 2015
   },
   {
@@ -1219,10 +1217,10 @@ const MOVIES = [
       "Action",
       "Drama"
     ],
-    "rating": 5.9,
+    "rating": 6.2,
     "duration": 119,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=47%20Ronin",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=47%20Ronin",
+    "poster": "https://image.tmdb.org/t/p/w500/xDHnmcroujCRG0ysYQaiswjbyHd.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/nyt0jlofZyjhRqiQkEp0cdoKaS3.jpg",
     "year": 2013
   },
   {
@@ -1233,10 +1231,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 7.6,
+    "rating": 7.653,
     "duration": 136,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Captain%20America%3A%20The%20Winter%20Soldier",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Captain%20America%3A%20The%20Winter%20Soldier",
+    "poster": "https://image.tmdb.org/t/p/w500/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg",
     "year": 2014
   },
   {
@@ -1249,10 +1247,10 @@ const MOVIES = [
       "Adventure",
       "Comedy"
     ],
-    "rating": 6,
+    "rating": 6.393,
     "duration": 93,
-    "poster": "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRy4iKrj2GP4p.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/6HrfPZtKcGmX2tUWW3cnciZTaSD.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/uzzTystB8lL0mRDII5Sfs5HxgkI.jpg",
     "year": 2010
   },
   {
@@ -1264,10 +1262,10 @@ const MOVIES = [
       "Mystery",
       "Family"
     ],
-    "rating": 6.2,
+    "rating": 6.3,
     "duration": 130,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Tomorrowland",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Tomorrowland",
+    "poster": "https://image.tmdb.org/t/p/w500/kziYpr5Nfw60P0My8aj1sgCEqed.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/udYOmbW1JEZjVd726PWHlmptxPi.jpg",
     "year": 2015
   },
   {
@@ -1280,10 +1278,10 @@ const MOVIES = [
       "Adventure",
       "Comedy"
     ],
-    "rating": 7.8,
+    "rating": 7.724,
     "duration": 102,
-    "poster": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/2mxS4wUimwlLmI1xp6QW6NSU361.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/4s2d3xdyqotiVNHTlTlJjrr3q0H.jpg",
     "year": 2014
   },
   {
@@ -1295,10 +1293,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 7.1,
+    "rating": 7.356,
     "duration": 108,
-    "poster": "https://placehold.co/500x750/1a1a1a/e8a838?font=montserrat&text=Wreck-It%20Ralph",
-    "backdrop": "https://placehold.co/1920x1080/1a1a1a/222222?font=montserrat&text=Wreck-It%20Ralph",
+    "poster": "https://image.tmdb.org/t/p/w500/zWoIgZ7mgmPkaZjG0102BSKFIqQ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/3IFRjBDwtk0DlIsDfJ2zEzLjUBi.jpg",
     "year": 2012
   },
   {
@@ -1310,10 +1308,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 6.4,
+    "rating": 6.724,
     "duration": 100,
-    "poster": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK1DVfjko.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/eOoCzH0MqeGr2taUZO4SwG416PF.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/jtOvTVlkF8TlaOq94oNXRc9u2yp.jpg",
     "year": 2004
   },
   {
@@ -1324,10 +1322,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 4.9,
+    "rating": 5.355,
     "duration": 120,
-    "poster": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/9S50foUIYGwiNPWOxi1WJF6IPwI.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/auT0H5fFUnPKjHNj0OkQMkxdbl2.jpg",
     "year": 2016
   },
   {
@@ -1339,10 +1337,10 @@ const MOVIES = [
       "Family",
       "Animation"
     ],
-    "rating": 7.5,
+    "rating": 7.857,
     "duration": 98,
-    "poster": "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/ygGmAO60t8GyqUo9xYeYxSZAR3b.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/59vDC1BuEQvti24OMr0ZvtAK6R1.jpg",
     "year": 2010
   },
   {
@@ -1353,10 +1351,10 @@ const MOVIES = [
       "Action",
       "Thriller"
     ],
-    "rating": 5.9,
+    "rating": 6.186,
     "duration": 109,
-    "poster": "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/nvsoLAclNfpyJSp73TiGKwZoqJW.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/kbXMOnz2RhTSAbLtHX5hy5AXtwv.jpg",
     "year": 2003
   },
   {
@@ -1367,10 +1365,10 @@ const MOVIES = [
       "Sci-Fi",
       "Action"
     ],
-    "rating": 7.9,
+    "rating": 7.905,
     "duration": 121,
-    "poster": "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRy4iKrj2GP4p.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/uLtVbjvS1O7gXL8lUOwsFOH4man.jpg",
     "year": 2014
   },
   {
@@ -1381,10 +1379,10 @@ const MOVIES = [
       "Sci-Fi",
       "Drama"
     ],
-    "rating": 8.1,
+    "rating": 8.47,
     "duration": 169,
-    "poster": "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xg27NrXi7VXCGUr7MN75UqLl6Vg.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/2ssWTSVklAEc98frZUQhgtGHx7s.jpg",
     "year": 2014
   },
   {
@@ -1397,10 +1395,10 @@ const MOVIES = [
       "Thriller",
       "Adventure"
     ],
-    "rating": 8.1,
+    "rating": 8.372,
     "duration": 148,
-    "poster": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
     "year": 2010
   },
   {
@@ -1413,10 +1411,10 @@ const MOVIES = [
       "Adventure",
       "Horror"
     ],
-    "rating": 6.5,
+    "rating": 7.216,
     "duration": 120,
-    "poster": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/b0PlSFdDwbyFAJlME0banwYYgJN.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/jPNShaWZMpVF0iQ7j1dvTuZLD20.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/tb0uo01w2kDHiQwTszsLlSusAm4.jpg",
     "year": 2016
   },
   {
@@ -1427,10 +1425,10 @@ const MOVIES = [
       "Fantasy",
       "Action"
     ],
-    "rating": 7,
+    "rating": 7.37,
     "duration": 169,
-    "poster": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK1DVfjko.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/xyXmtuvsoM5J3yNad0nvcetpBdY.jpg",
     "year": 2012
   },
   {
@@ -1441,10 +1439,10 @@ const MOVIES = [
       "Action",
       "Crime"
     ],
-    "rating": 6.6,
+    "rating": 7.003,
     "duration": 106,
-    "poster": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/gqY0ITBgT7A82poL9jv851qdnIb.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/jY9ef5nqY4xIIMu3yzW3qamUCoi.jpg",
     "year": 2001
   }
 ];
