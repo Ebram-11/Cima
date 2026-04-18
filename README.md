@@ -1,6 +1,6 @@
 # 🎬 Cima — Cinema Booking System
 
-**Cima** is a centralized digital movie booking platform for Egypt, connecting moviegoers with multiple cinemas through a seamless, personalized, and engaging experience. Browse movies, filter showtimes, select seats, and complete secure online payments — all in one place.
+Cima is a comprehensive digital movie booking platform designed to connect moviegoers across Egypt with multiple cinemas through a seamless, personalized, and engaging experience. The platform supports the full movie-going journey within a single unified system. The system provides the following key capabilities:
 
 ---
 
