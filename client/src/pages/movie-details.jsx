@@ -130,9 +130,15 @@ function MovieDetails() {
                       </div>
                       <div className="md-times-grid">
                         {cinema.times.map((time, tIdx) => (
-                          <button key={tIdx} className="md-time-slot">
-                            {time}
-                          </button>
+                         <button 
+                         key={tIdx} 
+                         className="md-time-slot"
+                         onClick={() => navigate('/checkout', { 
+                           state: { movie, cinema, time } 
+                         })}
+                       >
+                         {time}
+                       </button>
                         ))}
                       </div>
                     </div>

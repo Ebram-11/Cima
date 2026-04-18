@@ -9,7 +9,7 @@ import MovieDetails from './pages/movie-details';
 import Cinemas from './pages/cinemas';
 import CinemaDetails from './pages/cinema-details';
 import './styles/global.css';
-
+import Checkout from './pages/Checkout'; 
 // Protected route wrapper
 function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
@@ -100,6 +100,11 @@ function AppRoutes() {
           <AppLayout><CinemaDetails /></AppLayout>
         </ProtectedRoute>
       } />
+         <Route path="/checkout" element={
+     <ProtectedRoute>
+       <AppLayout><Checkout /></AppLayout>
+     </ProtectedRoute>
+   } />
       <Route path="/profile" element={
         <ProtectedRoute>
           <AppLayout>
