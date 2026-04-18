@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { JWT_SECRET } = require('../middleware/authMiddleware');
@@ -51,6 +52,8 @@ const register = async (req, res) => {
       passwordHash,
       userRole: 'CUSTOMER',
       loyaltyPoints: 0,
+      failedAttempts: 0,
+      lockUntil: null,
       createdAt: new Date().toISOString(),
     };
 
@@ -91,11 +94,32 @@ const login = async (req, res) => {
       return res.status(401).json({ message: 'Invalid email or password.' });
     }
 
+    // Check if account is locked
+    if (user.lockUntil && new Date(user.lockUntil) > new Date()) {
+      const remainingTime = Math.ceil((new Date(user.lockUntil) - new Date()) / 60000);
+      return res.status(403).json({
+        message: `Account is locked. Try again in ${remainingTime} minutes.`
+      });
+    }
+
     // Compare password
     const isMatch = await bcrypt.compare(password, user.passwordHash);
+
     if (!isMatch) {
+      user.failedAttempts = (user.failedAttempts || 0) + 1;
+
+      if (user.failedAttempts >= 5) {
+        user.lockUntil = new Date(Date.now() + 15 * 60000).toISOString();
+        user.failedAttempts = 0; // Reset counter after locking
+        return res.status(403).json({ message: 'Too many failed attempts. Account locked for 15 minutes.' });
+      }
+
       return res.status(401).json({ message: 'Invalid email or password.' });
     }
+
+    // Reset failed attempts on successful login
+    user.failedAttempts = 0;
+    user.lockUntil = null;
 
     // Generate token
     const token = generateToken(user);
