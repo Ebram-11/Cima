@@ -5,19 +5,21 @@ require('dotenv').config();
 const authRoutes = require('./routes/auth-routes');
 const moviesRoutes = require('./routes/movies-routes');
 const cinemasRoutes = require('./routes/cinemas-routes');
+const paymentsRoutes = require('./routes/payments-routes');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
 // Routes
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/movies', moviesRoutes);
 app.use('/api/cinemas', cinemasRoutes);
-
+app.use('/api/payments', paymentsRoutes);
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({
