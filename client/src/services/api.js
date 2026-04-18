@@ -55,6 +55,31 @@ const api = {
       return api.request('/auth/me');
     },
   },
+
+  // Movies endpoints (SCRUM-42)
+  movies: {
+    // genres: optional array of genre names
+    list(genres = []) {
+      const qs = genres.length > 0
+        ? `?genres=${encodeURIComponent(genres.join(','))}`
+        : '';
+      return api.request(`/movies${qs}`);
+    },
+    genres() {
+      return api.request('/movies/genres');
+    },
+  },
+
+  // Cinemas endpoints (SCRUM-41)
+  cinemas: {
+    list(location = '') {
+      const qs = location ? `?location=${encodeURIComponent(location)}` : '';
+      return api.request(`/cinemas${qs}`);
+    },
+    locations() {
+      return api.request('/cinemas/locations');
+    },
+  },
 };
 
 export default api;
