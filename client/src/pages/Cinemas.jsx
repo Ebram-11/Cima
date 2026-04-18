@@ -1,7 +1,7 @@
 // SCRUM-41: Filter Cinemas by Location
 import { useEffect, useState } from 'react';
 import api from '../services/api';
-import './Cinemas.css';
+import './cinemas.css';
 
 // Session persistence key — acceptance criterion 4:
 // filter selection persists across navigation within the same session.

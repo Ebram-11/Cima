@@ -68,6 +68,9 @@ const api = {
     genres() {
       return api.request('/movies/genres');
     },
+    getById(id) {
+      return api.request(`/movies/${id}`);
+    },
   },
 
   // Cinemas endpoints (SCRUM-41)

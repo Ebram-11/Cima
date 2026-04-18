@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import Sidebar from './components/Sidebar';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Home from './pages/Home';
-import Movies from './pages/Movies';
-import Cinemas from './pages/Cinemas';
+import { AuthProvider, useAuth } from './context/auth-context';
+import Sidebar from './components/sidebar';
+import Login from './pages/login';
+import Register from './pages/register';
+import Home from './pages/home';
+import Movies from './pages/movies';
+import MovieDetails from './pages/movie-details';
+import Cinemas from './pages/cinemas';
 import './styles/global.css';
 
 // Protected route wrapper
@@ -81,6 +82,11 @@ function AppRoutes() {
       <Route path="/movies" element={
         <ProtectedRoute>
           <AppLayout><Movies /></AppLayout>
+        </ProtectedRoute>
+      } />
+      <Route path="/movies/:id" element={
+        <ProtectedRoute>
+          <AppLayout><MovieDetails /></AppLayout>
         </ProtectedRoute>
       } />
       <Route path="/cinemas" element={
