@@ -86,6 +86,21 @@ const api = {
       return api.request(`/cinemas/${id}`);
     }
   },
-};
 
+  // Payments endpoints (SCRUM-51)
+  payments: {
+    createIntent(amount, bookingId) {
+      return api.request('/payments/create-intent', {
+        method: 'POST',
+        body: JSON.stringify({ amount, bookingId }),
+      });
+    },
+    confirm(paymentIntentId, bookingId) {
+      return api.request('/payments/confirm', {
+        method: 'POST',
+        body: JSON.stringify({ paymentIntentId, bookingId }),
+      });
+    }
+  }
+};
 export default api;
