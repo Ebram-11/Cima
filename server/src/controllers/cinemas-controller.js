@@ -1,5 +1,4 @@
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const prisma = require('../config/db');
 
 // GET /api/cinemas?location=Cairo
 const getCinemas = async (req, res) => {
