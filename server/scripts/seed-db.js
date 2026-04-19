@@ -7,10 +7,14 @@ async function seed() {
   console.log('🌱 Starting database seeding...');
 
   try {
-    // 1. Clear existing dynamic data (but keep users)
-    await prisma.showtime.deleteMany();
-    await prisma.movie.deleteMany();
-    await prisma.cinema.deleteMany();
+    // 1. Check if data already exists to prevent redundant seeding
+    const cinemaCount = await prisma.cinema.count();
+    const movieCount = await prisma.movie.count();
+
+    if (cinemaCount > 0 || movieCount > 0) {
+      console.log('✅ Database already contains data. Skipping seed.');
+      return;
+    }
 
     // 2. Import Cinemas
     console.log(`🎬 Importing ${cinemasData.length} cinemas...`);
