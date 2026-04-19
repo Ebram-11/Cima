@@ -1,4 +1,6 @@
-const API_BASE = '/api';
+const API_BASE = import.meta.env.PROD 
+  ? 'https://cima-production-e342.up.railway.app/api' 
+  : '/api';
 
 const api = {
   // Generic fetch wrapper with auth header
