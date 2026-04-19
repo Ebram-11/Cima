@@ -96,19 +96,23 @@ async function seed() {
       }
     });
 
-    // Test Manager (assigned to the first cinema)
-    if (allCinemas.length > 0) {
+    // Test Manager (assigned to any available cinema)
+    const existingCinema = await prisma.cinema.findFirst();
+    if (existingCinema) {
       await prisma.user.upsert({
         where: { email: 'manager@cima.com' },
-        update: { managedCinemaId: allCinemas[0] },
+        update: { managedCinemaId: existingCinema.id },
         create: {
           email: 'manager@cima.com',
           name: 'Cinema Manager',
           passwordHash,
           userRole: 'STAFF',
-          managedCinemaId: allCinemas[0]
+          managedCinemaId: existingCinema.id
         }
       });
+      console.log(`✅ Manager account bound to: ${existingCinema.name}`);
+    } else {
+      console.warn('⚠️ No cinemas found to assign a manager to.');
     }
 
     console.log('✅ Seeding complete!');
