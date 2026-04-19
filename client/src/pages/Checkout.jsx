@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import './checkout.css';
+import './Checkout.css';
 
 function Checkout() {
   const { state } = useLocation();

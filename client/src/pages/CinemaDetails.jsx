@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import './cinema-details.css';
+import './CinemaDetails.css';
 
 function CinemaDetails() {
   const { id } = useParams();
