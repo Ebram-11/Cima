@@ -11,12 +11,8 @@ async function seed() {
     const cinemaCount = await prisma.cinema.count();
     const movieCount = await prisma.movie.count();
 
-    if (cinemaCount > 0 || movieCount > 0) {
-      console.log('✅ Database already contains data. Skipping seed.');
-      return;
-    }
-
-    // 2. Import Cinemas
+    if (cinemaCount === 0 && movieCount === 0) {
+      // 2. Import Cinemas
     console.log(`🎬 Importing ${cinemasData.length} cinemas...`);
     const cinemaMap = {}; // store oldId -> newId mapping if needed, but we'll use names for matching showtimes
     
@@ -78,6 +74,41 @@ async function seed() {
           });
         }
       }
+    }
+
+    // End of conditional data block
+}
+
+    // 5. Create Default Users
+    console.log('👤 Creating default admin and manager accounts...');
+    const bcrypt = require('bcryptjs');
+    const passwordHash = await bcrypt.hash('admin123', 10);
+
+    // Global Admin
+    await prisma.user.upsert({
+      where: { email: 'admin@cima.com' },
+      update: {},
+      create: {
+        email: 'admin@cima.com',
+        name: 'System Admin',
+        passwordHash,
+        userRole: 'ADMIN'
+      }
+    });
+
+    // Test Manager (assigned to the first cinema)
+    if (allCinemas.length > 0) {
+      await prisma.user.upsert({
+        where: { email: 'manager@cima.com' },
+        update: { managedCinemaId: allCinemas[0] },
+        create: {
+          email: 'manager@cima.com',
+          name: 'Cinema Manager',
+          passwordHash,
+          userRole: 'STAFF',
+          managedCinemaId: allCinemas[0]
+        }
+      });
     }
 
     console.log('✅ Seeding complete!');
