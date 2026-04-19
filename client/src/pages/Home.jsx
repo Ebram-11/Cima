@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/auth-context';
 import api from '../services/api';
-import './home.css';
+import './Home.css';
 
 function Home() {
   const { user } = useAuth();

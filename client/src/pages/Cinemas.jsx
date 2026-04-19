@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import './cinemas.css';
+import './Cinemas.css';
 
 // Session persistence key — acceptance criterion 4:
 // filter selection persists across navigation within the same session.

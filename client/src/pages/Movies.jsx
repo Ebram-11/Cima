@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import './movies.css';
+import './Movies.css';
 
 function Movies() {
   const navigate = useNavigate();
