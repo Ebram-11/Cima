@@ -1,0 +1,34 @@
+import React, { useEffect, useState } from "react";
+import api from "../services/api";
+import Ticket from "../components/Ticket";
+
+const BookingHistory = () => {
+  const [bookings, setBookings] = useState([]);
+  const [selectedTicket, setSelectedTicket] = useState(null);
+
+  useEffect(() => {
+    api.get("/bookings").then(res => setBookings(res.data));
+  }, []);
+
+  const viewTicket = (bookingId) => {
+    api.get(`/tickets/${bookingId}`).then(res => setSelectedTicket(res.data));
+  };
+
+  return (
+    <div>
+      <h2>My Bookings</h2>
+      <ul>
+        {bookings.map(b => (
+          <li key={b.id}>
+            {b.movieTitle} - {b.showtime}
+            <button onClick={() => viewTicket(b.id)}>View Ticket</button>
+          </li>
+        ))}
+      </ul>
+
+      {selectedTicket && <Ticket ticket={selectedTicket} />}
+    </div>
+  );
+};
+
+export default BookingHistory;
