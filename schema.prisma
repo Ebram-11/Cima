@@ -1,0 +1,92 @@
+// Prisma schema for Cima Cinema Booking System
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ── Enums ────────────────────────────────────────
+
+enum Role {
+  CUSTOMER
+  ADMIN
+  STAFF
+  SUPPORT
+}
+
+enum BookingStatus {
+  CONFIRMED
+  CANCELLED
+  PENDING
+}
+
+// ── User ─────────────────────────────────────────
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  passwordHash  String
+  name          String
+  userRole      Role      @default(CUSTOMER)
+  loyaltyPoints Int       @default(0)
+  phone         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  bookings      Booking[]
+}
+
+// ── Booking ───────────────────────────────────────
+
+model Booking {
+  id              String        @id @default(uuid())
+  referenceNumber String        @unique
+  userId          String
+  user            User          @relation(fields: [userId], references: [id])
+
+  movieId         Int
+  movieTitle      String
+  moviePoster     String?
+
+  cinemaId        Int
+  cinemaName      String
+  cinemaLocation  String
+
+  showtime        String        // e.g. "18:00"
+  showDate        String        // e.g. "2026-05-04"
+
+  totalAmount     Float
+  status          BookingStatus @default(CONFIRMED)
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  seats           Seat[]
+  ticket          Ticket?
+}
+
+// ── Seat ──────────────────────────────────────────
+
+model Seat {
+  id         String   @id @default(uuid())
+  bookingId  String
+  booking    Booking  @relation(fields: [bookingId], references: [id])
+  row        String   // e.g. "C"
+  number     Int      // e.g. 7
+  createdAt  DateTime @default(now())
+}
+
+// ── Ticket ────────────────────────────────────────
+
+model Ticket {
+  id            String   @id @default(uuid())
+  bookingId     String   @unique
+  booking       Booking  @relation(fields: [bookingId], references: [id])
+  qrData        String   @unique   // encoded booking reference — used to detect duplicates
+  isUsed        Boolean  @default(false)
+  createdAt     DateTime @default(now())
+}

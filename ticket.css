@@ -1,0 +1,184 @@
+/* [SCRUM-55] Digital Ticket */
+
+.ticket-page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.ticket-page__state {
+  text-align: center;
+  padding: 80px 16px;
+  color: var(--text-secondary);
+}
+
+.ticket-page__state--error {
+  color: #e53e3e;
+}
+
+/* ── Back button ──────────────────────────────── */
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.btn-back:hover { color: var(--text-primary); }
+
+/* ── Ticket card ──────────────────────────────── */
+.ticket {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+  color: #111;
+}
+
+/* Header strip */
+.ticket__header {
+  background: #e50914;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ticket__brand {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.ticket__used-badge {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+/* Body */
+.ticket__body {
+  padding: 24px;
+}
+
+.ticket__movie-section {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ticket__poster {
+  width: 64px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.ticket__movie-info {
+  flex: 1;
+}
+
+.ticket__movie-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #111;
+}
+
+.ticket__ref {
+  font-size: 0.82rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Details grid */
+.ticket__details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 8px;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.ticket__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ticket__detail-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #999;
+  font-weight: 600;
+}
+
+.ticket__detail-value {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Tear line */
+.ticket__tear-line {
+  border-top: 2px dashed #ddd;
+  margin: 0 20px;
+  position: relative;
+}
+
+.ticket__tear-line::before,
+.ticket__tear-line::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  background: var(--background, #0d0d1a);
+  border-radius: 50%;
+}
+
+.ticket__tear-line::before { left: -30px; }
+.ticket__tear-line::after  { right: -30px; }
+
+/* QR section */
+.ticket__qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  gap: 12px;
+}
+
+.ticket__qr-canvas {
+  border-radius: 8px;
+  display: block;
+}
+
+.ticket__qr-hint {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+  margin: 0;
+}
+
+.ticket__used-warning {
+  font-size: 0.82rem;
+  color: #e53e3e;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
